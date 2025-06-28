@@ -1,6 +1,6 @@
 # Angular File Upload Tutorial with Drag-and-Drop and Progress Bar
 
-Read full tutorial [here]().
+Read full tutorial [here](https://www.djamware.com/post/685f4b8ee1a9ac448f9a759d/angular-file-upload-tutorial-with-draganddrop-and-progress-bar).
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
 
