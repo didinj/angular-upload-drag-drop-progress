@@ -1,0 +1,27 @@
+<div class="upload-container"
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)">
+  <p>Drag and drop image files here, or click to select</p>
+  <input type="file" multiple accept="image/*" (change)="onFileSelected($event)" />
+</div>
+
+<div *ngIf="errorMessages.length">
+  <ul class="errors">
+    <li *ngFor="let error of errorMessages">{{ error }}</li>
+  </ul>
+</div>
+
+<ul *ngIf="files.length">
+  <li *ngFor="let file of files; let i = index">
+    <img *ngIf="previews[i]" [src]="previews[i]" alt="Preview" width="100" />
+    <div>
+      {{ file.name }} ({{ file.size / 1024 | number:'1.0-2' }} KB)
+    </div>
+    <div *ngIf="uploadProgress[i] >= 0">
+      <progress [value]="uploadProgress[i]" max="100"></progress>
+      {{ uploadProgress[i] }}%
+    </div>
+  </li>
+</ul>
+
+<button (click)="uploadFiles()" [disabled]="!files.length || uploading">Upload</button>
